@@ -2,9 +2,7 @@
   Once you complete a problem, refresh ./SpecRunner.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
-
   You can refresh the page at any time to re-run all the tests.
-
   This exercise is to get you comfortable with interacting with promises in JavaScript
 */
 
@@ -28,6 +26,11 @@ function promisedNames() {
 
 // Code Here
 
+function first() {
+  return promisedNames().then(function(value){
+    return value[0];
+  });
+};
 
 ////////// PROBLEM 2 //////////
 
@@ -38,6 +41,11 @@ function promisedNames() {
 
 //Code Here
 
+function last() {
+  return promisedNames().then(function(value){
+    return value[2];
+  });
+};
 
 ////////// PROBLEM 3 //////////
 
@@ -48,6 +56,11 @@ function promisedNames() {
 
 //Code Here
 
+function toLarge(number){
+  return new Promise((resolve, reject) => {
+    (number <= 10) ? resolve(number): reject(number);
+  });
+};
 
 ////////// PROBLEM 4 //////////
 
@@ -69,6 +82,11 @@ function promisesErrors() {
 
 // Code Here
 
+function errorCatcher() {
+  return promisesErrors().catch(function(errorMsg) {
+    return errorMsg.message;
+  });
+};
 
 ////////// PROBLEM 5 //////////
 
@@ -80,6 +98,14 @@ function promisesErrors() {
 */
 
 //Code Here
+
+function waitFor10() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(true)
+    }, 10000)
+  });
+};
 
 ////////// PROBLEM 6 //////////
 
@@ -96,4 +122,6 @@ var modifiedResolve;
 
 //Code Here
 
-
+promise6.then(function(value) {
+  modifiedResolve = value * 2;
+});
