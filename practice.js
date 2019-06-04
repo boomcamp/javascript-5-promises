@@ -118,5 +118,8 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
+promise6.then(function(val) {
+  modifiedResolve = val * 2;
+});
 
 
