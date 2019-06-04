@@ -55,6 +55,14 @@ function last(){
 */
 
 //Code Here
+function toLarge(n){
+  return new Promise(function (resolve, reject) {
+    if(n<10)
+      resolve(n)
+    else
+      reject(n)
+  })
+}
 
 
 ////////// PROBLEM 4 //////////
