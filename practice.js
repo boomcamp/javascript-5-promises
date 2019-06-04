@@ -90,8 +90,12 @@ function promisesErrors() {
 */
 
 // Code Here
+function errorCatcher() {
+  return promisesErrors().catch(function(message){
+    return message.message;
+  })
 
-
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -119,5 +123,8 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
+
+
+
 
 
