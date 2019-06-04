@@ -27,7 +27,11 @@ function promisedNames() {
  */
 
 // Code Here
-
+function first(){
+  return promisedNames().then(function(name){
+    return name[0];
+  })
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -37,7 +41,11 @@ function promisedNames() {
  */
 
 //Code Here
-
+function last(){
+  return promisedNames().then(function(name){
+    return name[name.length-1];
+  })
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -47,7 +55,17 @@ function promisedNames() {
 */
 
 //Code Here
-
+function toLarge(num){
+  return new Promise((resolve,reject)=>{
+    if(num<=10){
+    resolve(num);
+    }
+    else{
+      reject(num);
+    }
+  });
+  
+}
 
 ////////// PROBLEM 4 //////////
 
