@@ -27,6 +27,13 @@ function promisedNames() {
  */
 
 // Code Here
+function first() {
+  return new Promise((resolve, reject) => {
+    resolve(promisedNames().then(function(result) {
+      return result.shift();
+    }));
+  });
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -37,6 +44,13 @@ function promisedNames() {
  */
 
 //Code Here
+function last() {
+  return new Promise((resolve, reject) => {
+    resolve(promisedNames().then(function(result) {
+      return result.pop();
+    }));
+  });
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -47,7 +61,15 @@ function promisedNames() {
 */
 
 //Code Here
-
+function toLarge(num) {
+  return new Promise((resolve,reject) => {
+    if(num<11) {
+      resolve(num);
+    } else {
+      reject(num);
+    }
+  });
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -68,6 +90,13 @@ function promisesErrors() {
 */
 
 // Code Here
+function errorCatcher() {
+  return new Promise((resolve,reject)=> {
+    resolve(promisesErrors().catch(function(err){
+    return err.message;
+    }));
+  });
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -80,6 +109,11 @@ function promisesErrors() {
 */
 
 //Code Here
+function waitFor10() {
+  return new Promise((resolve,reject) => {
+    setTimeout(function() { resolve(true); }, 10000);
+  });
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -95,5 +129,11 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
+test = Promise.resolve(promise6.then(function(val){
+  modifiedResolve = val*2;
+}));
+// test = promise6.then(function(item){
+//   return item;
+// })
 
 
