@@ -127,6 +127,10 @@ var modifiedResolve;
 
 //Code Here
 
+promise6.then(function(num){
+  modifiedResolve = num*2;
+})
+
 
 
 
