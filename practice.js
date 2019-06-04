@@ -28,6 +28,12 @@ function promisedNames() {
 
 // Code Here
 
+function first(){
+  return promisedNames().then(function(value){
+    return value[0];
+  })
+}
+
 
 ////////// PROBLEM 2 //////////
 
@@ -37,6 +43,12 @@ function promisedNames() {
  */
 
 //Code Here
+function last(){
+  return promisedNames().then(function(value){
+    return value[value.length-1]
+  })
+  
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,6 +60,11 @@ function promisedNames() {
 
 //Code Here
 
+function toLarge(num){
+  return new Promise((resolve, reject)=>{
+    (num<=10) ? resolve(num):reject(num);
+  })
+} 
 
 ////////// PROBLEM 4 //////////
 
@@ -68,6 +85,8 @@ function promisesErrors() {
 */
 
 // Code Here
+
+function errorCatcher
 
 
 ////////// PROBLEM 5 //////////
