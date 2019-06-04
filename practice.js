@@ -86,7 +86,11 @@ function promisesErrors() {
 */
 
 // Code Here
-
+function errorCatcher(){
+ return promisesErrors().catch(function(msg){
+   return msg.message;
+ })
+}
 
 ////////// PROBLEM 5 //////////
 
