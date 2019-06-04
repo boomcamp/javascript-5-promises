@@ -41,6 +41,11 @@ function first(){
  */
 
 //Code Here
+function last(){
+  return promisedNames().then(function (n){
+    return n[2];
+  })
+}
 
 ////////// PROBLEM 3 //////////
 
