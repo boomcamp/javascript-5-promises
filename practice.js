@@ -55,7 +55,12 @@ function last() {
 */
 
 //Code Here
-
+function toLarge(n) {
+  return new Promise((resolve, reject) => {
+    (n <= 10) ? resolve(n) : null;
+    (n > 10) ? reject(n) : null;
+  });
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -76,7 +81,11 @@ function promisesErrors() {
 */
 
 // Code Here
-
+function errorCatcher() {
+  return promisesErrors().catch(function(e) {
+    return e.message;
+  });
+}
 
 ////////// PROBLEM 5 //////////
 
