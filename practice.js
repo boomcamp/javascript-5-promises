@@ -86,7 +86,11 @@ function promisesErrors() {
 
 // Code Here
 
-function errorCatcher
+function errorCatcher(){
+  return promisesErrors().catch(function(err){
+    return err.message
+  })
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -99,6 +103,14 @@ function errorCatcher
 */
 
 //Code Here
+
+function waitFor10(){
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve(true)
+    }, 10000)
+  })
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -114,5 +126,7 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
+
+
 
 
