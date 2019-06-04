@@ -121,5 +121,8 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
-
+//modifiedResolve = 20;
+promise6.then(function(ten){
+  modifiedResolve = ten * 2;
+});
 
