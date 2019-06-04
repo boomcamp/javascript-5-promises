@@ -41,7 +41,11 @@ function first(){
  */
 
 //Code Here
-
+function last(){
+  return promisedNames().then(function(names){
+    return names[names.length-1];
+  })
+}
 
 ////////// PROBLEM 3 //////////
 
