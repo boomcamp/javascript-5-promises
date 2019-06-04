@@ -99,6 +99,13 @@ function errorCatcher() {
 */
 
 //Code Here
+function waitFor10() {
+  return new Promise((resolve, reject) => {
+    setTimeout(function() {
+      resolve(true);
+    }, 1000);
+  });
+}
 
 
 ////////// PROBLEM 6 //////////
