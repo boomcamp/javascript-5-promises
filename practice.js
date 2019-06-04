@@ -129,6 +129,11 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
+promise6.then(function(maskianu){
+  return modifiedResolve = maskianu * 2;
+})
+
+
 
 
 
