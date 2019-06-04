@@ -41,7 +41,11 @@ return new Promise((resolve, reject) => {
  */
 
 //Code Here
-
+function last() {
+  return new Promise((resolve, reject) => {
+    resolve('Jake');
+  });
+}
 
 ////////// PROBLEM 3 //////////
 
