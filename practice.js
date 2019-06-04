@@ -56,7 +56,15 @@ function last() {
 */
 
 //Code Here
-
+function toLarge(num) {
+  return new Promise((resolve, reject) => {
+    if(num <= 10) {
+      resolve(num);
+    } else if(num >= 10) {
+      reject(num);
+    }
+  })
+}
 
 ////////// PROBLEM 4 //////////
 
