@@ -102,7 +102,13 @@ function errorCatcher(){
 */
 
 //Code Here
-
+function waitFor10(){
+  return new Promise((resolve,reject)=>{
+    setTimeout(function(e){
+      resolve(true)
+    },10)
+  })
+}
 ////////// PROBLEM 6 //////////
 
 /*
@@ -117,5 +123,7 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
-
+promise6.then(function(num){
+  return modifiedResolve = num * 2;
+})
 
