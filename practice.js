@@ -83,7 +83,11 @@ function promisesErrors() {
 */
 
 // Code Here
-
+function errorCatcher() {
+  return promisesErrors().catch(function(e) {
+    return e.message;
+  });
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -95,11 +99,7 @@ function promisesErrors() {
 */
 
 //Code Here
-function errorCatcher() {
-  return promisesErrors().catch(function(e) {
-    return e.message;
-  });
-}
+
 
 ////////// PROBLEM 6 //////////
 
