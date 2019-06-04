@@ -27,7 +27,11 @@ function promisedNames() {
  */
 
 // Code Here
-
+function first(){
+  return promisedNames().then(function (n){
+    return n[0];
+  })
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -37,7 +41,6 @@ function promisedNames() {
  */
 
 //Code Here
-
 
 ////////// PROBLEM 3 //////////
 
