@@ -27,7 +27,11 @@ function promisedNames() {
  */
 
 // Code Here
-
+function first(){
+  return promisedNames().then(function(names){
+    return names[0];
+  })
+}
 
 ////////// PROBLEM 2 //////////
 
