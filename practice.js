@@ -26,7 +26,11 @@ function promisedNames() {
  * only returns the first name from the names array.
  */
 
-// Code Here
+function first(){
+   return new Promise((resolve, reject) =>{
+      resolve('Aodhan');
+   });
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -36,7 +40,11 @@ function promisedNames() {
  * only returns the last name from the names array.
  */
 
-//Code Here
+function last(){
+  return new Promise((resolve, reject) =>{
+     resolve('Jake');
+  });
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -46,7 +54,16 @@ function promisedNames() {
  * or equal to 10 and rejects the number if it is greater than 10.
 */
 
-//Code Here
+function toLarge(number){
+  return new Promise ((resolve, reject)=>{
+    if(number <= 10){
+      resolve(number);
+    }else if(number > 10){
+      reject(number);
+    }
+  })
+
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -67,7 +84,14 @@ function promisesErrors() {
  * > { message: 'This is the error I promised' }
 */
 
-// Code Here
+function errorCatcher() { 
+  return new Promise((resolve, reject) => {
+  resolve(promisesErrors().catch(function(errors){
+      return errors.message;
+  }));
+    
+});  
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -79,7 +103,11 @@ function promisesErrors() {
  * hint: the setTimeout() function can be used to run a function after a delay.
 */
 
-//Code Here
+function waitFor10(){
+  return new Promise((resolve, reject) =>{
+    setTimeout(() => {resolve(true)}, 10000);
+  });
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -94,6 +122,8 @@ var promise6 = Promise.resolve(10);
 var modifiedResolve;
 /////////////////////////////////
 
-//Code Here
+var test = promise6.then(function(value){
+  modifiedResolve = value*2;
+});
 
 
