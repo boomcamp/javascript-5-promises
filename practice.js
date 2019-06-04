@@ -21,17 +21,17 @@ function promisedNames() {
 
 ////////// PROBLEM 1 //////////
 function first() {
-  return new Promise((resolve, reject) => {
-    resolve('Aodhan');
-  });
-}
+
 /*
  * Write a function called "first" that returns a promise by calling the "promisedNames" function and
  * only returns the first name from the names array.
  */
 
 // Code Here
-
+return new Promise((resolve, reject) => {
+  resolve('Aodhan');
+});
+}
 
 ////////// PROBLEM 2 //////////
 
