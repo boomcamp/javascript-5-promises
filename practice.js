@@ -42,7 +42,11 @@ function first() {
  */
 
 //Code Here
-
+function last() {
+  return new Promise((resolve, reject) => {
+    resolve('Jake');
+  });
+}
 
 ////////// PROBLEM 3 //////////
 
