@@ -27,7 +27,17 @@ function promisedNames() {
  */
 
 // Code Here
-
+function first() {
+ return new Promise ((resolve,reject) =>{
+   resolve(
+    promisedNames()
+      .then((n) => {return n[0] })
+      .catch((err) => console.log(error))
+   );
+   reject(console.log(reject));
+  
+ });
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -37,7 +47,18 @@ function promisedNames() {
  */
 
 //Code Here
-
+function last() {
+  return new Promise ((resolve,reject) =>{
+    resolve(
+     promisedNames()
+       .then((n) => {return n[n.length - 1] })
+       .catch((err) => console.log(error))
+    );
+    reject(console.log(reject));
+   
+  });
+ }
+ 
 
 ////////// PROBLEM 3 //////////
 
@@ -47,7 +68,17 @@ function promisedNames() {
 */
 
 //Code Here
-
+function toLarge(num) {
+  return new Promise(function(resolve, reject) {
+    if (num <=10){
+      resolve(num);
+    }
+    else{
+      reject(num);
+    }
+  });
+  
+ }
 
 ////////// PROBLEM 4 //////////
 
@@ -69,6 +100,11 @@ function promisesErrors() {
 
 // Code Here
 
+function errorCatcher() {
+  return promisesErrors()
+       .catch((n) => {return n.message })
+ }
+
 
 ////////// PROBLEM 5 //////////
 
@@ -80,6 +116,14 @@ function promisesErrors() {
 */
 
 //Code Here
+function waitFor10() {
+  return new Promise ((resolve,reject) =>{
+    resolve(() => {setTimeout(true, 10000);});
+    reject(console.log(reject));
+  });
+  
+  
+ }
 
 ////////// PROBLEM 6 //////////
 
@@ -95,5 +139,7 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
+promise6.then((n) => {return modifiedResolve = n * 2 })
+
 
 
