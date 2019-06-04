@@ -100,7 +100,13 @@ function errorCatcher(){
 */
 
 //Code Here
-
+function waitFor10(){
+  return new Promise(function (resolve, reject){
+    setTimeout(function (){
+      resolve(true);
+    }, 10000)
+  })
+}
 ////////// PROBLEM 6 //////////
 
 /*
