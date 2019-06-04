@@ -27,6 +27,11 @@ function promisedNames() {
  */
 
 // Code Here
+function first() {
+  return new Promise((resolve, reject) => {
+    resolve('Aodhan');
+  });
+}
 
 
 ////////// PROBLEM 2 //////////
