@@ -27,6 +27,13 @@ function promisedNames() {
  */
 
 // Code Here
+function first() {
+   return new Promise((resolve, reject) => {
+    resolve(promisedNames().then(function(result){
+      return result.shift();
+    }));
+   });
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -37,7 +44,13 @@ function promisedNames() {
  */
 
 //Code Here
-
+function last() {
+   return new Promise((resolve, reject) => {
+    resolve(promisedNames().then(function(result){
+      return result.pop();
+    }));
+   });
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -45,8 +58,21 @@ function promisedNames() {
  * Create a function called "toLarge" that returns a promise that resolves the passed number when it is less than
  * or equal to 10 and rejects the number if it is greater than 10.
 */
+// function toLarge(){
+//   return new Promise(function(resolve, reject) => {
 
+//   });
+// }
 //Code Here
+function toLarge(num) {
+  return new Promise((resolve, reject) => {
+    if(num <= 10){
+    resolve(num);
+  }else{
+    reject(num);
+  }
+  });
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -68,6 +94,13 @@ function promisesErrors() {
 */
 
 // Code Here
+function errorCatcher() {
+  return new Promise((resolve, reject) => {
+    resolve(promisesErrors().catch(function(error){
+      return error.message;
+    }));
+  });
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -77,7 +110,12 @@ function promisesErrors() {
  * the boolean value "true".
  *
  * hint: the setTimeout() function can be used to run a function after a delay.
-*/
+*/  
+function waitFor10() {
+  return new Promise((resolve, reject) => {
+      setTimeout(() => {resolve(true)}, 10000);
+  });
+}
 
 //Code Here
 
@@ -95,5 +133,10 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
+
+
+var test = promise6.then(function(value){
+  modifiedResolve = value*2;
+});
 
 
