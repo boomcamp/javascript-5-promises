@@ -1,4 +1,5 @@
 /*
+  IMPORTANT NOTE: use var for declaring variables
   Once you complete a problem, refresh ./SpecRunner.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
