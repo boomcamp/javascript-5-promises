@@ -28,8 +28,7 @@ function promisedNames() {
  */
 
 // Code Here
-
-
+first = () => new Promise( (resolve, reject) => resolve('Aodhan'));
 ////////// PROBLEM 2 //////////
 
 /*
@@ -38,7 +37,7 @@ function promisedNames() {
  */
 
 //Code Here
-
+ last = () => new Promise((resolve, reject) => resolve('Jake'));
 
 ////////// PROBLEM 3 //////////
 
@@ -48,7 +47,7 @@ function promisedNames() {
 */
 
 //Code Here
-
+toLarge = (num) => new Promise((resolve, reject) => (num <= 10) ? resolve(num) : reject(num));
 
 ////////// PROBLEM 4 //////////
 
@@ -69,8 +68,7 @@ function promisesErrors() {
 */
 
 // Code Here
-
-
+errorCatcher = () => promisesErrors().catch(e => e.message);
 ////////// PROBLEM 5 //////////
 
 /*
@@ -80,8 +78,8 @@ function promisesErrors() {
  * hint: the setTimeout() function can be used to run a function after a delay.
 */
 
-//Code Here
-
+//Code Here 
+waitFor10 = () => new Promise((resolve, reject) => setTimeout(() =>  resolve(true), 10000)) 
 ////////// PROBLEM 6 //////////
 
 /*
@@ -96,5 +94,4 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
-
-
+promise6.then(val => modifiedResolve = val * 2);
