@@ -44,8 +44,7 @@ function first() {
 //Code Here
 function last() {
   return promisedNames().then(function(name) {
-    var last = name.length - 1;
-    return name[last];
+    return name[name.length - 1];
   });
 }
 ////////// PROBLEM 3 //////////
