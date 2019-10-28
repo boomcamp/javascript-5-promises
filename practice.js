@@ -28,7 +28,12 @@ function promisedNames() {
  */
 
 // Code Here
-
+function first(){
+  return new Promise((resolve,reject)=>{
+    resolve("Aodhan");
+  })
+ }
+ first();
 
 ////////// PROBLEM 2 //////////
 
@@ -39,6 +44,12 @@ function promisedNames() {
 
 //Code Here
 
+function last(){
+  return new Promise((resolve,reject)=>{
+    resolve("Jake");
+  })
+ }
+ last();
 
 ////////// PROBLEM 3 //////////
 
@@ -48,7 +59,15 @@ function promisedNames() {
 */
 
 //Code Here
-
+function toLarge(numbers){
+  return new Promise((resolve, reject) => {
+    if(numbers <= 10){
+      resolve(numbers);
+    }else{
+      reject(numbers);
+    }
+  })
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -61,7 +80,7 @@ function promisesErrors() {
 /////////////////////////////////////////////////////
 
 /*
- * Write a function called "errorCatcher" that calls the promisesErrors" function above, catches the error
+ * Write a function called "errorCatcher" that calls the "promisesErrors" function above, catches the error
  * returned and then resolves the error message.
  *
  * hint: error objects have a message property
@@ -69,7 +88,11 @@ function promisesErrors() {
 */
 
 // Code Here
-
+function errorCatcher() {
+  return promisesErrors().catch((event)=>{
+    return event.message
+  });
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -81,7 +104,13 @@ function promisesErrors() {
 */
 
 //Code Here
-
+function waitFor10(){
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve(true);
+    },10000);
+  }
+)}
 ////////// PROBLEM 6 //////////
 
 /*
@@ -96,5 +125,7 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
-
+promise6.then((num)=>{
+  modifiedResolve = num * 2;
+ })
 
