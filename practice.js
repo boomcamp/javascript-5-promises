@@ -97,11 +97,11 @@ function errorCatcher(){
  * hint: the setTimeout() function can be used to run a function after a delay.
 */
 
-function waitFor10(seconds){
+function waitFor10(ms){
   return new Promise(function(resolve){
     window.setTimeout(function() {
       resolve("true");
-    }, seconds)
+    },10000)
   })
 }
 
