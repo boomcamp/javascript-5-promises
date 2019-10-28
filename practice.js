@@ -108,6 +108,4 @@ var promise6 = Promise.resolve(10);
 var modifiedResolve;
 /////////////////////////////////
 
-promise6.then(value => {
-   return (modifiedResolve = value * 2);
-});
+promise6.then(value => (modifiedResolve = value * 2));
