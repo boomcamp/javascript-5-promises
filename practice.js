@@ -78,7 +78,7 @@ errorCatcher = () => promisesErrors().catch(e => e.message);
  * hint: the setTimeout() function can be used to run a function after a delay.
 */
 
-//Code Here
+//Code Here 
 waitFor10 = () => new Promise((resolve, reject) => setTimeout(() =>  resolve(true), 10000)) 
 ////////// PROBLEM 6 //////////
 
