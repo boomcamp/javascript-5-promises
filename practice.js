@@ -13,7 +13,7 @@
 ///////////////////////////////////////////
 
 function promisedNames() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     resolve(['Aodhan', 'Greg', 'Jake']);
   });
 }
@@ -28,8 +28,11 @@ function promisedNames() {
  */
 
 // Code Here
-
-
+first =()=>{
+  return new Promise((resolve)=>{
+    resolve("Aodhan");
+  })
+}
 ////////// PROBLEM 2 //////////
 
 /*
@@ -38,7 +41,12 @@ function promisedNames() {
  */
 
 //Code Here
-
+last=()=>{
+  return new Promise((resolve)=>{
+    resolve("Jake");
+  })
+ 
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -48,7 +56,15 @@ function promisedNames() {
 */
 
 //Code Here
-
+toLarge=(a)=>{
+  return new Promise((resolve,reject)=>{
+    if (a <= 10) {
+      resolve(a);
+    } else {
+      reject(a);
+    }
+  })
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -65,10 +81,15 @@ function promisesErrors() {
  * returned and then resolves the error message.
  *
  * hint: error objects have a message property
- * > { message: 'This is the error I promised' }
+{ message: 'This is the error I promised' }
 */
 
 // Code Here
+errorCatcher=()=>{
+   return promisesErrors().catch(function(event){
+     return event.message
+   });
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -82,6 +103,14 @@ function promisesErrors() {
 
 //Code Here
 
+waitFor10=()=>{
+  return new Promise((resolve,reject)=>{
+
+    setTimeout(()=>{
+      resolve(true);
+    },10000);
+  }
+  )}
 ////////// PROBLEM 6 //////////
 
 /*
@@ -95,6 +124,8 @@ var promise6 = Promise.resolve(10);
 var modifiedResolve;
 /////////////////////////////////
 
-//Code Here
+//Code
 
-
+promise6.then(function(value){
+  modifiedResolve = value * 2;
+})
