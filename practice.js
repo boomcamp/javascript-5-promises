@@ -28,8 +28,8 @@ function promisedNames() {
  */
 
 function first(){
-  return new Promise (function(resolve)  {
-    return resolve('Aodhan')
+  return promisedNames().then(function(name){
+    return name[0]
   })
 }
 
@@ -42,11 +42,10 @@ function first(){
  */
 
 function last(){
-  return new Promise (function(resolve){
-    return resolve('Jake')
+  return promisedNames().then(function(name){
+    return name[name.length-1]
   })
 }
-
 
 ////////// PROBLEM 3 //////////
 
