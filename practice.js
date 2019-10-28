@@ -29,10 +29,9 @@ function promisedNames() {
 
 // Code Here
 function first() {
-  return promisedNames().then(function(name) {
-    return name[0];
-  });
+  return promisedNames().then(name => name[0]);
 }
+
 ////////// PROBLEM 2 //////////
 
 /*
@@ -42,10 +41,7 @@ function first() {
 
 //Code Here
 function last() {
-  return promisedNames().then(function(name) {
-    var last = name.length - 1;
-    return name[last];
-  });
+  return promisedNames().then(name => name[name.length - 1]);
 }
 
 ////////// PROBLEM 3 //////////
@@ -61,6 +57,7 @@ function toLarge(num) {
     num <= 10 ? resolve(num) : reject(num);
   });
 }
+
 ////////// PROBLEM 4 //////////
 
 ///////////// DO NOT EDIT ////////////////////////////
@@ -85,6 +82,7 @@ function errorCatcher() {
     return error.message;
   });
 }
+
 ////////// PROBLEM 5 //////////
 
 /*
