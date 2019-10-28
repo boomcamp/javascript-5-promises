@@ -28,11 +28,11 @@ function promisedNames() {
  */
 
 // Code Here
-// function first() {
-//   return new Promise(resolve => {
-//     resolve("Aodhan");
-//   });
-// }
+function first() {
+  return new Promise(resolve => {
+    resolve("Aodhan");
+  });
+}
 ////////// PROBLEM 2 //////////
 
 /*
@@ -41,11 +41,11 @@ function promisedNames() {
  */
 
 //Code Here
-// function last() {
-//   return new Promise(resolve => {
-//     resolve("Jake");
-//   });
-// }
+function last() {
+  return new Promise(resolve => {
+    resolve("Jake");
+  });
+}
 ////////// PROBLEM 3 //////////
 
 /*
