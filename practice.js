@@ -29,9 +29,7 @@ function promisedNames() {
 
 // Code Here
 function first() {
-  return promisedNames().then(function(value) {
-    return value[0];
-  });
+  return promisedNames().then(value => value[0]);
 }
 
 ////////// PROBLEM 2 //////////
@@ -44,9 +42,7 @@ function first() {
 //Code Here
 
 function last() {
-  return promisedNames().then(function(value) {
-    return value[value.length - 1];
-  });
+  return promisedNames().then(value => value[value.length - 1]);
 }
 ////////// PROBLEM 3 //////////
 
@@ -82,9 +78,7 @@ function promisesErrors() {
 
 // Code Here
 function errorCatcher() {
-  return promisesErrors().catch(function(error) {
-    return error.message;
-  });
+  return promisesErrors().catch(error => error.message);
 }
 ////////// PROBLEM 5 //////////
 
@@ -97,11 +91,11 @@ function errorCatcher() {
 
 //Code Here
 function waitFor10() {
-  return new Promise(function(resolve) {
+  return new Promise(resolve =>
     setTimeout(function() {
       resolve(true);
-    }, 10000);
-  });
+    }, 10000)
+  );
 }
 
 ////////// PROBLEM 6 //////////
