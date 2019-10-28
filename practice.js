@@ -20,7 +20,8 @@ function promisedNames() {
 /////////////////////////////////////////
 /////////// DO NOT EDIT ABOVE!!! ////////
 
-////////// PROBLEM 1 //////////
+////////// PROBLEM 1 /////////
+
 
 /*
  * Write a function called "first" that returns a promise by calling the "promisedNames" function and
@@ -28,7 +29,11 @@ function promisedNames() {
  */
 
 // Code Here
-
+var first = function(){
+  return promisedNames().then(function(data){
+    return data[0];
+  });
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -38,6 +43,11 @@ function promisedNames() {
  */
 
 //Code Here
+var last = function(){
+  return promisedNames().then(function(data){
+    return data[data.length - 1];
+  });
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,6 +58,15 @@ function promisedNames() {
 */
 
 //Code Here
+var toLarge = (data) => {
+  return new Promise((resolve,reject)=>{
+    if(data<=10)
+      resolve(data);
+    else{
+      reject(data);
+    }
+  })
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -69,6 +88,11 @@ function promisesErrors() {
 */
 
 // Code Here
+var errorCatcher = () =>{
+  return promisesErrors().catch((data)=>{
+    return data.message;
+  });
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -81,6 +105,13 @@ function promisesErrors() {
 */
 
 //Code Here
+var waitFor10 = () => {
+  return new Promise((resolve,reject)=>{
+    setTimeout(() => {
+      resolve(true);
+    }, 10000);
+  })
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -96,5 +127,5 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
-
+promise6.then(data=>{modifiedResolve = data*2});
 
