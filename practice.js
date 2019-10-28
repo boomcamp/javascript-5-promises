@@ -14,7 +14,7 @@
 
 function promisedNames() {
   return new Promise((resolve, reject) => {
-    resolve(['Aodhan', 'Greg', 'Jake']);
+    resolve(["Aodhan", "Greg", "Jake"]);
   });
 }
 /////////////////////////////////////////
@@ -28,8 +28,9 @@ function promisedNames() {
  */
 
 // Code Here
-
-
+function first() {
+  return promisedNames().then(name => name[0]);
+}
 ////////// PROBLEM 2 //////////
 
 /*
@@ -38,27 +39,35 @@ function promisedNames() {
  */
 
 //Code Here
-
-
+function last() {
+  return promisedNames().then(name => name[name.length - 1]);
+}
 ////////// PROBLEM 3 //////////
 
 /*
  * Create a function called "toLarge" that returns a promise that resolves the passed number when it is less than
  * or equal to 10 and rejects the number if it is greater than 10.
-*/
+ */
 
 //Code Here
-
-
+function toLarge(num) {
+  return new Promise((resolve, reject) => {
+    if (num <= 10) {
+      resolve(num);
+    } else {
+      reject(num);
+    }
+  });
+}
 ////////// PROBLEM 4 //////////
 
 ///////////// DO NOT EDIT ////////////////////////////
 function promisesErrors() {
   return new Promise(function() {
-    throw new Error('This is the error I promised')
-  })
+    throw new Error("This is the error I promised");
+  });
 }
-/////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////
 
 /*
  * Write a function called "errorCatcher" that calls the promisesErrors" function above, catches the error
@@ -66,11 +75,14 @@ function promisesErrors() {
  *
  * hint: error objects have a message property
  * > { message: 'This is the error I promised' }
-*/
+ */
 
 // Code Here
-
-
+function errorCatcher() {
+  return promisesErrors().catch(err => {
+    return err.message;
+  });
+}
 ////////// PROBLEM 5 //////////
 
 /*
@@ -78,17 +90,23 @@ function promisesErrors() {
  * the boolean value "true".
  *
  * hint: the setTimeout() function can be used to run a function after a delay.
-*/
+ */
 
 //Code Here
-
+function waitFor10() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(true);
+    }, 10000);
+  });
+}
 ////////// PROBLEM 6 //////////
 
 /*
  * Below is a promise named "promise6", this promise always resolves the number 10. Write the code that
  * would allow you to access the resolved value of "promise6" and set the "modifiedResolve" variable to
  * 2 times the resolved value of "promise6".
-*/
+ */
 
 ///////// DO NOT EDIT ////////////
 var promise6 = Promise.resolve(10);
@@ -96,5 +114,6 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
-
-
+promise6.then(value => {
+  modifiedResolve = value * 2;
+});
