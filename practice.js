@@ -114,8 +114,6 @@ var modifiedResolve;
 /////////////////////////////////
 
 //Code Here
-function modifiedResult(num) {
-  return new Promise(resolve => {
-    resolve((modifiedResolve = promise6 * 2));
-  });
-}
+promise6.then(value => {
+  modifiedResolve = value * 2;
+});
